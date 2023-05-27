@@ -96,6 +96,10 @@ lxc snapshot ubuntu mysnap1
 ```
 
 
+restore snapshot
+```bash
+lxc restore ubuntu mysnap1
+```
 
 start a virtual machine: 
 ```bash
@@ -171,4 +175,15 @@ lxc image list images: ubuntu focal
 restart
 ```bash
 lxc restart ubuntu
+```
+
+
+set autostart
+```bash
+lxc config set ubuntu boot.autostart 1
+lxc config set ubuntu limits.memory 4GB
+```
+
+```
+lxc config show ubuntu
 ```
