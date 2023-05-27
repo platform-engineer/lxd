@@ -34,21 +34,20 @@ check the list of remote servers
 lxc remote list
 ```
 
+
+If this is your first time running LXD on this machine, you should also run:
+```bash
+lxd init 
+```
+
 start your first container, try:
 ```bash
 lxc launch ubuntu:22.04
 ```
 
-can accept all defaults
+start a virtual machine: 
 ```bash
-lxd init 
+lxc launch ubuntu:22.04 --vm
 ```
 
 
-If this is your first time running LXD on this machine, you should also run: lxd init
-
-Or for a virtual machine: lxc launch ubuntu:22.04 --vm
-
-```bash
-lxd init 
-```
