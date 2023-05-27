@@ -73,9 +73,14 @@ projects: []
 cluster: null
 ```
 
+check list container
+```bash
+lxc list
+```
+
 start your first container, try:
 ```bash
-lxc launch ubuntu:22.04
+lxc launch images:ubuntu/focal ubuntu
 ```
 
 start a virtual machine: 
