@@ -37,8 +37,9 @@ lxc remote list
 
 If this is your first time running LXD on this machine, you should also run:
 ```bash
-sudo lxd init 
+sudo lxd init
 ```
+
 
 result yaml file
 ```yaml
@@ -73,6 +74,12 @@ projects: []
 cluster: null
 ```
 
+
+show container info
+```bash
+lxc info ubuntu
+```
+
 check list container
 ```bash
 lxc list
@@ -84,10 +91,6 @@ lxc launch images:ubuntu/focal ubuntu
 ```
 
 
-show container info
-```bash
-lxc info ubuntu
-```
 
 
 create snapshot
@@ -187,3 +190,81 @@ lxc config set ubuntu limits.memory 4GB
 ```
 lxc config show ubuntu
 ```
+
+
+## Network
+
+show interfaces
+
+```
+ip a
+```
+
+
+```
+lxc profile show default
+```
+
+
+```
+lxc profile create routed
+```
+    
+lxc network attach my-network my-instance eth0
+```
+lxc network attach lxdbr0 ubuntu eth0
+```
+
+
+lxdbr0
+
+lxc config device add <instance_name> eth0 nic nictype=bridged parent=br0
+```
+lxc config device add ubuntu eth0 nic nictype=bridged parent=br0
+```
+
+remove net
+```
+lxc config device remove ubuntu
+```
+
+net.ipv4.conf.<parent>.forwarding=1
+
+```
+net.ipv4.conf.lxd.forwarding=1    
+```
+    
+lxc launch ubuntu: mycontainer --profile default
+
+lxc launch ubuntu --profile default --profile routed
+    
+add
+```
+lxc config device add ubuntu eth0 nic nictype=routed name=eth0 parent=enp2s0 vlan=100 ipv4.address=10.220.47.106
+```
+
+
+  
+    
+## INSTALL UI
+    
+```   
+lxc config set core.https_address "[::]:8443"
+```
+    
++ [canonical/dotrun](https://github.com/canonical/dotrun#installation)
+    
+```    
+sudo apt install docker    
+sudo apt install -y python3-pip
+sudo pip3 install -y  dotrun
+```
+    
+    
+```    
+git clone https://github.com/canonical/lxd-ui.git
+cd lxd-ui
+dotrun
+sudo lxc config trust add keys/lxd-ui.crt
+```    
+    
