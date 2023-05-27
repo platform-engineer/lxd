@@ -107,6 +107,11 @@ go to the shell
 lxc shell ubuntu
 ```
 
+check whether you have sudo privileges or not, you can launch the following command.
+```
+sudo -l
+```
+
 changee a password for root user
 ```bash
 sudo passwd root
@@ -116,6 +121,29 @@ check hostname
 ```bash
 hostnamectl
 ```
+
+
+check IP adress
+```
+ifconfig
+```
+
+if ont exist, install:
+```
+apt install net-tools
+```
+
+
+To check that this is actually the case, you can run the “ssh” command with the “-V” option.
+```
+ssh -V
+```
+
+if not installed:
+```        
+sudo apt-get install openssh-server
+```
+
 
 change username or/and password
 ```bash
