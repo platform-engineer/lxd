@@ -37,7 +37,7 @@ lxc remote list
 
 If this is your first time running LXD on this machine, you should also run:
 ```bash
-lxd init 
+sudo lxd init 
 ```
 
 start your first container, try:
