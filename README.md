@@ -87,7 +87,32 @@ start a virtual machine:
 ```bash
 lxc launch ubuntu:22.04 --vm
 ```
+go to the shell
+```bash
+lxc exec ubuntu 
+```
 
+changee a password for root user
+```bash
+sudo passwd root
+```
+
+change username or/and password
+```bash
+whoami
+passwd
+```
+
+
+install app in container
+```bash
+lxc exec ubuntu -- apt install -y ubuntu-desktop
+```
+
+install app in container
+```bash
+lxc exec ubuntu -- apt install -y firefox
+```
 
 search
 ```bash
