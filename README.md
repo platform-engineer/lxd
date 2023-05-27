@@ -168,3 +168,7 @@ lxc image list images
 lxc image list images: ubuntu focal
 ```
 
+restart
+```bash
+lxc restart ubuntu
+```
