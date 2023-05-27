@@ -83,18 +83,38 @@ start your first container, try:
 lxc launch images:ubuntu/focal ubuntu
 ```
 
+
+show container info
+```bash
+lxc info ubuntu
+```
+
+
+create snapshot
+```bash
+lxc snapshot ubuntu mysnap1
+```
+
+
+
 start a virtual machine: 
 ```bash
-lxc launch ubuntu:22.04 --vm
+lxc launch ubuntu
 ```
+
 go to the shell
 ```bash
-lxc exec ubuntu 
+lxc shell ubuntu
 ```
 
 changee a password for root user
 ```bash
 sudo passwd root
+```
+
+check hostname
+```bash
+hostnamectl
 ```
 
 change username or/and password
